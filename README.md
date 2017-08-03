@@ -5,10 +5,24 @@ Written by Renan Greca in 2017.
 This code is free to distribute and alter.
 
 ## Usage
-Place this script in the same directory as the Switch's Album folder, either on
+Place the program and the `game_ids.json` file in the same directory as the Switch's Album folder, either on
 the microSD card or on your computer after transferring the Album.
 
-On a terminal or command prompt, run:
+### Windows
+Double-click `organize_screenshots.exe`.
+
+### macOS
+On a terminal, run:
+```
+./organize_screenshots
+```
+or
+```
+python organize_screenshots.py
+```
+
+### Linux
+On a terminal, run:
 ```
 python organize_screenshots.py
 ```
