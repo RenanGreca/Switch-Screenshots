@@ -1,13 +1,8 @@
 # Renan Greca, 2017
 # This code is free to distribute and alter.
 
-# Organizes screenshots using the game ids in the filenames.
-# Place this script in the same directory as the Switch's Album folder
-
-# The JSON file must follow this format:
-# {
-#   "F1C11A22FAEE3B82F21B330E1B786A39": "The Legend of Zelda Breath of the Wild",
-# }
+# Place this script in the same directory as the Switch's Album folder.
+# View README.md for more details.
 
 import os
 import json
@@ -25,7 +20,7 @@ def list_images(dir):
     return r
 
 # Load game IDs file
-with open('_game_ids.json') as data_file:
+with open('game_ids.json') as data_file:
     game_ids = json.load(data_file)
 
 # Iterate over images
