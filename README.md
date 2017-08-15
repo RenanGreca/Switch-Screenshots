@@ -4,8 +4,21 @@ Script to organize Nintendo Switch screenshots by game title instead of date.
 Written by Renan Greca in 2017.
 This code is free to distribute and alter.
 
+## Download
+The stable Python source, a Windows `exe` bundle and a macOS executable, along
+with the latest `game_ids.json file`, are available for download at the
+ 1.0 release:
+
+https://github.com/RenanGreca/Switch-Screenshots/releases/tag/v1.0
+
+If you already have the program but wishes to update your `game_ids.json` file,
+check out the latest subversion release:
+
+https://github.com/RenanGreca/Switch-Screenshots/releases
+
 ## Usage
-Place the program and the `game_ids.json` file in the same directory as the Switch's Album folder, either on
+Place the program and the `game_ids.json` file in the same directory as the
+Switch's Album folder, either on
 the microSD card or on your computer after transferring the Album.
 
 ### Windows
@@ -58,3 +71,8 @@ output a warning telling you which screenshot it was.
 You may manually add the ID to the `game_ids.json` file, but it would be greatly
 appreciated if you could submit an issue request on GitHub detailing the ID
 that was not found and which game and region the screenshot is from.
+
+## Discussion
+
+If you want to discuss the program or ask questions about it, please check out
+the [Reddit thread at /r/NintendoSwitch](https://www.reddit.com/r/NintendoSwitch/comments/6rcttl/i_made_a_program_to_organize_switch_screenshots/).
