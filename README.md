@@ -11,7 +11,7 @@ with the latest `game_ids.json file`, are available for download at the
 
 https://github.com/RenanGreca/Switch-Screenshots/releases/tag/v1.0
 
-If you already have the program but wishes to update your `game_ids.json` file,
+If you already have the program but want to update your `game_ids.json` file,
 check out the latest subversion release:
 
 https://github.com/RenanGreca/Switch-Screenshots/releases
