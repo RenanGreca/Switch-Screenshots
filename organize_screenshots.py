@@ -15,7 +15,7 @@ def list_images(dir):
     r = []
     for root, dirs, files in os.walk(dir):
         for name in files:
-            if "jpg" in name:
+            if "jpg" in name or "mp4" in name:
                 r.append(os.path.join(root, name))
     return r
 
