@@ -5,14 +5,18 @@ Written by Renan Greca in 2017.
 This code is free to distribute and alter.
 
 ## Download
-The stable Python source, a Windows `exe` bundle and a macOS executable, along
-with the latest `game_ids.json file`, are available for download at the
- 1.0 release:
+The stable Python source, a Windows `exe` bundle and a macOS executable are
+available for download at the 1.0 release:
 
 https://github.com/RenanGreca/Switch-Screenshots/releases/tag/v1.0
 
-If you already have the program but want to update your `game_ids.json` file,
-check out the latest subversion release:
+The 1.1 release adds support for video captures, but no Windows `exe` has been
+built yet:
+
+https://github.com/RenanGreca/Switch-Screenshots/releases/tag/v1.1.0
+
+You also need the `game_ids.json` file from the most recent release.
+This file is updated as we discover new IDs for games.
 
 https://github.com/RenanGreca/Switch-Screenshots/releases
 
@@ -75,4 +79,4 @@ that was not found and which game and region the screenshot is from.
 ## Discussion
 
 If you want to discuss the program or ask questions about it, please check out
-the [Reddit thread at /r/NintendoSwitch](https://www.reddit.com/r/NintendoSwitch/comments/6rcttl/i_made_a_program_to_organize_switch_screenshots/).
+the [Reddit thread at /r/NintendoSwitch](https://www.reddit.com/r/NintendoSwitch/comments/6rcttl/i_made_a_program_to_organize_switch_screenshots/) or tweet at me [@RenanGreca](https://twitter.com/RenanGreca). :)
