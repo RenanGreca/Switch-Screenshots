@@ -25,15 +25,14 @@ Place the program and the `game_ids.json` file in the same directory as the
 Switch's Album folder, either on
 the microSD card or on your computer after transferring the Album.
 
+After running, all screenshots will be placed within directories according to
+which game they are from. They can be found within the Output directory.
+
 ### Windows
 Double-click `organize_screenshots.exe`.
 
 ### macOS
 On a terminal, run:
-```
-./organize_screenshots
-```
-or
 ```
 python organize_screenshots.py
 ```
@@ -75,6 +74,8 @@ output a warning telling you which screenshot it was.
 You may manually add the ID to the `game_ids.json` file, but it would be greatly
 appreciated if you could submit an issue request on GitHub detailing the ID
 that was not found and which game and region the screenshot is from.
+
+The Windows `.exe` was generated using PyInstaller.
 
 ## Discussion
 
