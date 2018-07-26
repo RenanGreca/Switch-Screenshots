@@ -15,7 +15,7 @@ def list_images(dir):
     r = []
     for root, dirs, files in os.walk(dir):
         for name in files:
-            if "jpg" in name or "mp4" in name:
+            if "jpg" in name or "mp4" in name or "png" in name:
                 r.append(os.path.join(root, name))
     return r
 
@@ -27,11 +27,15 @@ with open('game_ids.json') as data_file:
 for image in list_images('Album'):
     image_id = image.split('-')[1].split('.')[0]
 
+    if not os.path.exists('Output'):
+        os.makedirs('Output')
+
     # If the ID was in the JSON file, create a directory and copy the file
     if image_id in game_ids:
         game_title = game_ids[image_id]
-        if not os.path.exists(game_title):
-            os.makedirs(game_title)
-        copy2(image, game_title)
+        path = os.path.join('Output', game_title)
+        if not os.path.exists(path):
+            os.makedirs(path)
+        copy2(image, path)
     else:
         print "Game ID not found for image", image

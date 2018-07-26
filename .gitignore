@@ -1,3 +1,9 @@
+.DS_Store
+
+# input and output directories
+Album/
+Output/
+
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
