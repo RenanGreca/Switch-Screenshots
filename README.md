@@ -5,15 +5,9 @@ Written by Renan Greca in 2017.
 This code is free to distribute and alter.
 
 ## Download
-The stable Python source, a Windows `exe` bundle and a macOS executable are
-available for download at the 1.0 release:
+The latest stable release is 1.2.0. Download the Python file (Mac or Linux) or the Windows executable here:
 
-https://github.com/RenanGreca/Switch-Screenshots/releases/tag/v1.0
-
-The 1.1 release adds support for video captures, but no Windows `exe` has been
-built yet:
-
-https://github.com/RenanGreca/Switch-Screenshots/releases/tag/v1.1.0
+https://github.com/RenanGreca/Switch-Screenshots/releases/tag/v1.2.0
 
 You also need the `game_ids.json` file from the most recent release.
 This file is updated as we discover new IDs for games.
