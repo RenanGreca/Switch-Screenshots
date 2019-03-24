@@ -41,20 +41,18 @@ def organize_screenshots(game_ids, input_dir, output_dir):
         # Split the filename to find the game ID
         image_id = image.split('-')[1].split('.')[0]
         
+        folder_name = image_id
         if image_id in game_ids:
-            # If the ID was in the JSON file, create a directory using the game's title and copy the file
-            game_title = game_ids[image_id]
-            path = os.path.join(output_dir, game_title)
-            if not os.path.exists(path):
-                os.makedirs(path)
-            copy2(image, path)
+            # If the ID was in the JSON file, the directory is named with the title
+            folder_name = game_ids[image_id]
         else:
-            # Otherwise, create a directory using the game's ID
             not_found.append(image)
-            path = os.path.join(output_dir, image_id)
-            if not os.path.exists(path):
-                os.makedirs(path)
-            copy2(image, path)
+
+        # Create the directory and copy the file
+        path = os.path.join(output_dir, folder_name)
+        if not os.path.exists(path):
+            os.makedirs(path)
+        copy2(image, path)
 
         # Print progress indicator
         sys.stdout.write("\r"+str(idx+1)+"/"+str(count))
