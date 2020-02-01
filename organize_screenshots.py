@@ -30,16 +30,15 @@ parser.add_argument('-o', '--output_dir', type=str, required=False, default='./O
 
 GameImage = namedtuple("GameImage", ("path", "timestamp", "game_id", "extension"))
 
-# Create a list of all the image/video files in the Album directory.
-# Thanks to L. Teder
-# https://stackoverflow.com/a/36898903
 def list_images(dir):
     r = []
+    # Iterate over all files in the input directory
     for root, _, files in os.walk(dir):
         for name in files:
             path = os.path.join(root, name)
             _, extension = os.path.splitext(path)
             if extension in ALLOWED_EXTENSIONS:
+                # Separate the information found in the filename
                 timestamp = name[0:TIMESTAMP_LEN]
                 game_id= name[TIMESTAMP_LEN + 1:TIMESTAMP_LEN + GAME_ID_LEN + 1]
                 game_image = GameImage(path=path, timestamp=timestamp, extension=extension, game_id=game_id)
@@ -72,6 +71,7 @@ def organize_screenshots(game_ids, input_dir, output_dir):
         sys.stdout.flush()
 
     if len(not_found):
+        # Print list of IDs that did not match any game
         print("\nNames not found for the following game IDs:")
         print("\n".join(sorted(not_found)))
 
