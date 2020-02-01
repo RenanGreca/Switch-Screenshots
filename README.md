@@ -71,6 +71,9 @@ The `game_ids.json` file follows this format:
 }
 ```
 
+**Important**: If the game's title includes a colon (`:`), please remove it, as
+this character is not allowed in file or directory names.
+
 ## Contributing
 
 The initial version of `game_ids.json` contained only the titles I have played.
