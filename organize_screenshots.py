@@ -26,6 +26,8 @@ parser.add_argument('-i', '--input_dir', type=str, required=False, default='./Al
                     help='(str) Path to the Album directory. Default: ./Album/')
 parser.add_argument('-o', '--output_dir', type=str, required=False, default='./Output/',
                     help='(str) Desired output directory. Default: ./Output/')
+parser.add_argument('-j', '--json_file', type=str, required=False, default='./game_ids.json',
+                    help='(str) JSON file containing the game IDs dictionary. Default: ./game_ids.json')
 
 
 GameImage = namedtuple("GameImage", ("path", "timestamp", "game_id", "extension"))
@@ -50,7 +52,7 @@ def organize_screenshots(game_ids, input_dir, output_dir):
     images = list_images(input_dir)
     count = len(images)
 
-    not_found = set()
+    not_found = dict()
     # Iterate over images
     for idx, image in enumerate(images):
         folder_name = image.game_id
@@ -58,7 +60,7 @@ def organize_screenshots(game_ids, input_dir, output_dir):
             # If the ID was in the JSON file, the directory is named with the title
             folder_name = game_ids[image.game_id]
         else:
-            not_found.add(image.game_id)
+            not_found[image.game_id] = image.path
 
         # Create the directory and copy the file
         path = os.path.join(output_dir, folder_name)
@@ -73,15 +75,17 @@ def organize_screenshots(game_ids, input_dir, output_dir):
     if len(not_found):
         # Print list of IDs that did not match any game
         print("\nNames not found for the following game IDs:")
-        print("\n".join(sorted(not_found)))
+        for game_id, path in not_found.items():
+            print("\n"+game_id+"\nFound in: "+path)
 
 if __name__ == '__main__':
     args = parser.parse_args()
     input_dir = args.input_dir
     output_dir = args.output_dir
+    json_file = args.json_file
 
     # Load game IDs file
-    with open('game_ids.json') as data_file:
+    with open(json_file) as data_file:
         game_ids = json.load(data_file)
 
     organize_screenshots(game_ids, input_dir, output_dir)
