@@ -58,7 +58,7 @@ def organize_screenshots(game_ids, input_dir, output_dir):
         folder_name = image.game_id
         if image.game_id in game_ids:
             # If the ID was in the JSON file, the directory is named with the title
-            folder_name = game_ids[image.game_id].replace(':', '')
+            folder_name = game_ids[image.game_id] #.replace(':', '')
         else:
             not_found[image.game_id] = image.path
 
