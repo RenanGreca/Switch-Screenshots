@@ -7,7 +7,7 @@ This code is free to distribute and alter.
 ## Download
 The latest stable release is 2.0.0. Download the Python file (Mac or Linux) or the Windows executable here:
 
-https://github.com/RenanGreca/Switch-Screenshots/releases/tag/v1.2.0
+https://github.com/RenanGreca/Switch-Screenshots/releases/tag/v2.0.0
 
 You also need the `game_ids.json` file from the most recent release.
 This file is updated as we discover new IDs for games.
