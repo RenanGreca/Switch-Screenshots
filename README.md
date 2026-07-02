@@ -45,10 +45,14 @@ python organize_screenshots.py
 
 * `-i INPUT_DIR`: Specifies location of the Album directory. Default: `./Album/`.
 * `-o OUTPUT_DIR`: Specifies desired output directory. Default: `./Output/`.
+* `-s`, `--split-consoles`: Place files under `Switch 1/` and `Switch 2/` subdirectories within the output folder, based on which console captured the media.
 
 ## About the game IDs
 
 Switch screenshots are stored in the following format: `[timestamp]-[game id].jpg`.
+On Nintendo Switch 2, filenames include an extra `L` after the game ID (for example,
+`[timestamp]-[game id]L.jpg`). The program recognizes this suffix and still looks up
+the 32-character game ID in `game_ids.json`.
 Therefore, we can use the filenames to figure out from which game it was taken.
 
 For example, the screenshot `2017030619573600-F1C11A22FAEE3B82F21B330E1B786A39.jpg`
