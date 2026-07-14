@@ -51,8 +51,9 @@ python organize_screenshots.py
 
 Switch screenshots are stored in the following format: `[timestamp]-[game id].jpg`.
 On Nintendo Switch 2, filenames include an extra `L` after the game ID (for example,
-`[timestamp]-[game id]L.jpg`). The program recognizes this suffix and still looks up
-the 32-character game ID in `game_ids.json`.
+`[timestamp]-[game id]L.jpg`). That trailing `L` is part of the ID used in
+`game_ids.json` for Switch 2 titles. The program also accepts older JSON entries
+that omit the `L`, as a fallback.
 Therefore, we can use the filenames to figure out from which game it was taken.
 
 For example, the screenshot `2017030619573600-F1C11A22FAEE3B82F21B330E1B786A39.jpg`

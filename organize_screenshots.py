@@ -48,16 +48,29 @@ def parse_filename(name):
         return None
 
     timestamp = stem[0:TIMESTAMP_LEN]
-    game_id = stem[id_start:id_end]
+    base_id = stem[id_start:id_end]
     suffix = stem[id_end:]
     if suffix == SWITCH_2_SUFFIX:
+        # Switch 2 IDs keep the trailing L so they match game_ids.json keys.
         console = SWITCH_2_LABEL
+        game_id = base_id + SWITCH_2_SUFFIX
     elif suffix == '':
         console = SWITCH_1_LABEL
+        game_id = base_id
     else:
         return None
 
     return GameImage(path=None, timestamp=timestamp, game_id=game_id, extension=extension, console=console)
+
+def lookup_title(game_ids, game_id):
+    if game_id in game_ids:
+        return game_ids[game_id]
+    # Fall back for older JSON entries that omit the Switch 2 L suffix.
+    if game_id.endswith(SWITCH_2_SUFFIX):
+        base_id = game_id[:-len(SWITCH_2_SUFFIX)]
+        if base_id in game_ids:
+            return game_ids[base_id]
+    return None
 
 def list_images(dir):
     r = []
@@ -79,11 +92,12 @@ def organize_screenshots(game_ids, input_dir, output_dir, split_consoles=False):
     not_found = dict()
     # Iterate over images
     for idx, image in enumerate(images):
-        folder_name = image.game_id
-        if image.game_id in game_ids:
+        title = lookup_title(game_ids, image.game_id)
+        if title is not None:
             # If the ID was in the JSON file, the directory is named with the title
-            folder_name = game_ids[image.game_id] #.replace(':', '')
+            folder_name = title #.replace(':', '')
         else:
+            folder_name = image.game_id
             not_found[image.game_id] = image.path
 
         # Create the directory and copy the file
